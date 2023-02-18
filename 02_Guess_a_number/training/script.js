@@ -6,11 +6,12 @@ function askNumber() {
   } while (isNaN(givenNumber));
   return givenNumber;
 }
-function DidIWin(givenNumber) {
-  if (givenNumber > 22) {
+function DidIWin(givenNumber, playerOneNumber) {
+  console.log(givenNumber, playerOneNumber);
+  if (givenNumber > playerOneNumber) {
     alert("Plus petit");
     return false;
-  } else if (givenNumber < 22) {
+  } else if (givenNumber < playerOneNumber) {
     alert("Plus grand");
     return false;
   } else {
@@ -39,7 +40,7 @@ function gamePlay() {
   console.log("player one number is ", playerOneNumber);
   do {
     givenNumber = askNumber();
-  } while (DidIWin(givenNumber) == false);
+  } while (DidIWin(givenNumber, playerOneNumber) == false);
 }
 // =======================================
 
