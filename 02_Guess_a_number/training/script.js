@@ -19,10 +19,11 @@ function DidIWin(givenNumber) {
   }
 }
 function gamePlay() {
-  let givenNumber = askNumber();
-  let result = DidIWin(givenNumber);
-
-  console.log(result, "resultat didIWin");
+  let givenNumber;
+  do {
+    givenNumber = askNumber();
+  } while (DidIWin(givenNumber) == false);
+  //   console.log(result, "resultat didIWin");
 }
 // =======================================
 
