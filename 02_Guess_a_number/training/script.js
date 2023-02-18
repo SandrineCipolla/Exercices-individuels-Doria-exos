@@ -9,6 +9,8 @@ function askNumber() {
 function DidIWin(givenNumber) {
   if (givenNumber > 22) {
     alert("Plus petit");
+  } else if (givenNumber < 22) {
+    alert("Plus grand");
   }
 }
 
