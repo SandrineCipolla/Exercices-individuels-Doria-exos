@@ -18,12 +18,28 @@ function DidIWin(givenNumber) {
     return true;
   }
 }
+function guessNumberPlayerOne() {
+  console.log("joueur 1 définir le nombre à deviner");
+  let playerOneNumber;
+  do {
+    playerOneNumber = parseInt(
+      prompt("Entrez un nombre compris entre 0 et 50")
+    );
+  } while (
+    playerOneNumber < 0 ||
+    playerOneNumber > 50 ||
+    isNaN(playerOneNumber)
+  );
+  console.log(playerOneNumber);
+  return playerOneNumber;
+}
 function gamePlay() {
   let givenNumber;
+  let playerOneNumber = guessNumberPlayerOne();
+  console.log("player one number is ", playerOneNumber);
   do {
     givenNumber = askNumber();
   } while (DidIWin(givenNumber) == false);
-  //   console.log(result, "resultat didIWin");
 }
 // =======================================
 
