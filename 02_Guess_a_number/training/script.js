@@ -9,16 +9,20 @@ function askNumber() {
 function DidIWin(givenNumber) {
   if (givenNumber > 22) {
     alert("Plus petit");
+    return false;
   } else if (givenNumber < 22) {
     alert("Plus grand");
+    return false;
   } else {
     alert("Bravo ! Vous avez deviné le nombre");
+    return true;
   }
 }
 function gamePlay() {
   let givenNumber = askNumber();
+  let result = DidIWin(givenNumber);
 
-  DidIWin(givenNumber);
+  console.log(result, "resultat didIWin");
 }
 // =======================================
 
