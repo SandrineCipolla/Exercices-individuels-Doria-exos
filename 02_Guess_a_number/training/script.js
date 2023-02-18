@@ -15,9 +15,11 @@ function DidIWin(givenNumber) {
     alert("Bravo ! Vous avez deviné le nombre");
   }
 }
+function gamePlay() {
+  let givenNumber = askNumber();
 
+  DidIWin(givenNumber);
+}
 // =======================================
 
-let givenNumber = askNumber();
-
-DidIWin(givenNumber);
+gamePlay();
