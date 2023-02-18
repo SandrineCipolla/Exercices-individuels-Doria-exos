@@ -11,6 +11,8 @@ function DidIWin(givenNumber) {
     alert("Plus petit");
   } else if (givenNumber < 22) {
     alert("Plus grand");
+  } else {
+    alert("Bravo ! Vous avez deviné le nombre");
   }
 }
 
