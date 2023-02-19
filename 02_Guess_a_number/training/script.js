@@ -3,6 +3,8 @@ let rangeMin = 0;
 let rangeMax = 50;
 let playerOneNumber = guessNumberPlayerOne();
 
+let tryingNumber = [];
+
 function askNumber() {
   let givenNumber;
   givenNumber = parseInt(document.getElementById("numberToGuess").value);
@@ -47,8 +49,18 @@ function guessNumberPlayerOne() {
 function tryOnce() {
   let currentUserNumber = askNumber();
   trying++;
-
   console.log("Essai numéro ", trying);
+
+  tryingNumber.push(currentUserNumber);
+  let guessedNumber = "";
+  for (let index = 0; index < tryingNumber.length; index++) {
+    const element = tryingNumber[index];
+    console.log("tableau", element);
+    guessedNumber += element + " ";
+  }
+
+  console.log("Concatenated guessed number are ", guessedNumber);
+
   let message1 = document.getElementById("message1");
   message1.innerText = "Essai numéro : " + trying;
   if (DidIWin(currentUserNumber, playerOneNumber)) {
