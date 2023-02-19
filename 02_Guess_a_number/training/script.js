@@ -1,5 +1,6 @@
 let trying = 0;
 let rangeMin = 0;
+let rangeMax = 50;
 let playerOneNumber = guessNumberPlayerOne();
 
 function askNumber() {
@@ -29,7 +30,7 @@ function guessNumberPlayerOne() {
     );
     if (
       playerOneNumber < rangeMin ||
-      playerOneNumber > 50 ||
+      playerOneNumber > rangeMax ||
       isNaN(playerOneNumber)
     ) {
       alert(playerOneNumber + " n'est pas un nombre entre 0 et 50");
@@ -37,7 +38,7 @@ function guessNumberPlayerOne() {
     console.log(playerOneNumber);
   } while (
     playerOneNumber < rangeMin ||
-    playerOneNumber > 50 ||
+    playerOneNumber > rangeMax ||
     isNaN(playerOneNumber)
   );
   return playerOneNumber;
@@ -53,7 +54,7 @@ function tryOnce() {
   if (DidIWin(currentUserNumber, playerOneNumber)) {
     document.write("Bravo ! Vous avez deviné le nombre");
   } else {
-    if (currentUserNumber > rangeMin) {
+    if (currentUserNumber > rangeMin && currentUserNumber < playerOneNumber) {
       rangeMin = currentUserNumber;
     }
     console.log("affichage" + rangeMin);
