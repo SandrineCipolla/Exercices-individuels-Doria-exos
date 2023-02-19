@@ -55,5 +55,7 @@ function tryOnce() {
   } else {
     rangeMin = currentUserNumber;
     console.log("affichage" + rangeMin);
+    let rangeMinHtml = document.getElementById("rangeMin");
+    rangeMinHtml.innerText = rangeMin;
   }
 }
