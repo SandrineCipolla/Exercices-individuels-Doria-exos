@@ -53,13 +53,16 @@ function tryOnce() {
 
   tryingNumber.push(currentUserNumber);
   let guessedNumber = "";
+
   for (let index = 0; index < tryingNumber.length; index++) {
     const element = tryingNumber[index];
     console.log("tableau", element);
-    guessedNumber += element + " ";
+    guessedNumber += element + ", ";
   }
-
   console.log("Concatenated guessed number are ", guessedNumber);
+
+  let message2 = document.getElementById("message2");
+  message2.innerText = "Nombres essayés: " + guessedNumber;
 
   let message1 = document.getElementById("message1");
   message1.innerText = "Essai numéro : " + trying;
