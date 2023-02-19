@@ -57,7 +57,11 @@ function tryOnce() {
     if (currentUserNumber > rangeMin && currentUserNumber < playerOneNumber) {
       rangeMin = currentUserNumber;
     }
-    console.log("affichage" + rangeMin);
+    if (currentUserNumber < rangeMax && currentUserNumber > playerOneNumber) {
+      rangeMax = currentUserNumber;
+    }
+    console.log("affichage rangeMin" + rangeMin);
+    console.log("affichage rangeMax" + rangeMax);
     let rangeMinHtml = document.getElementById("rangeMin");
     rangeMinHtml.innerText = rangeMin;
   }
