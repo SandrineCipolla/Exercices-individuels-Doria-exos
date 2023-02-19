@@ -2,16 +2,15 @@ let trying = 0;
 let rangeMin = 0;
 let rangeMax = 50;
 let playerOneNumber = guessNumberPlayerOne();
-
 let tryingNumber = [];
 
 function askNumber() {
   let givenNumber;
   givenNumber = parseInt(document.getElementById("numberToGuess").value);
   console.log("fonction askNumber", givenNumber);
-
   return givenNumber;
 }
+
 function DidIWin(givenNumber, playerOneNumber) {
   console.log(givenNumber, playerOneNumber);
   if (givenNumber > playerOneNumber) {
@@ -61,11 +60,10 @@ function tryOnce() {
   }
   console.log("Concatenated guessed number are ", guessedNumber);
 
-  let message2 = document.getElementById("message2");
-  message2.innerText = "Nombres essayés: " + guessedNumber;
+  afficheDansHtml("message2", "Nombres essayés: " + guessedNumber);
 
-  let message1 = document.getElementById("message1");
-  message1.innerText = "Essai numéro : " + trying;
+  afficheDansHtml("message1", "Essai numéro : " + trying);
+
   if (DidIWin(currentUserNumber, playerOneNumber)) {
     document.write("Bravo ! Vous avez deviné le nombre");
   } else {
@@ -77,9 +75,18 @@ function tryOnce() {
     }
     console.log("affichage rangeMin" + rangeMin);
     console.log("affichage rangeMax" + rangeMax);
-    let rangeMinHtml = document.getElementById("rangeMin");
-    rangeMinHtml.innerText = rangeMin;
-    let rangeMaxHtml = document.getElementById("rangeMax");
-    rangeMaxHtml.innerText = rangeMax;
+
+    afficheDansHtml("rangeMin", rangeMin);
+
+    afficheDansHtml("rangeMax", rangeMax);
   }
+}
+/**
+ * affiche du texte dans un élément html
+ * @param {*} idHtmlElement
+ * @param {*} textContent
+ */
+function afficheDansHtml(idHtmlElement, textContent) {
+  let htmlElement = document.getElementById(idHtmlElement);
+  htmlElement.innerText = textContent;
 }
