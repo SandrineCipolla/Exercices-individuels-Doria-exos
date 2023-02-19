@@ -4,15 +4,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Guess a Number</title>
   </head>
   <body>
-    <h3>Entrer un nombre</h3>
-    <div>
-      <div>0 &lt;</div>
-      <div><input type="number" /></div>
-      <div>&lt; 50</div>
-      <div><button onclick="gamePlay()">Jouer</button></div>
+    <div class="container">
+      <h3>Entrer un nombre entre 0 et 50</h3>
+      <div>
+        0 &lt;
+        <input type="number" placeholder="Num" id="guess" />
+        &lt; 50
+        <button onclick="gamePlay()" id="my_btn">Jouer</button>
+      </div>
+
+      <!-- <input type="text" placeholder="Num" id="guess" /><br />
+      <button onclick="play()" id="my_btn">GUESS</button> -->
+
+      <p id="message1">Nombre d'essai : 0</p>
+      <p id="message2">Guessed number are : none</p>
+      <p id="message3"></p>
     </div>
     <script src="script.js"></script>
   </body>
