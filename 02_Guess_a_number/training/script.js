@@ -29,20 +29,20 @@ function guessNumberPlayerOne() {
     playerOneNumber = parseInt(
       prompt("Entrez un nombre compris entre 0 et 50")
     );
-    if (
-      playerOneNumber < rangeMin ||
-      playerOneNumber > rangeMax ||
-      isNaN(playerOneNumber)
-    ) {
+    if (isPlayerOneNumberInvalid(playerOneNumber)) {
       alert(playerOneNumber + " n'est pas un nombre entre 0 et 50");
     }
     console.log(playerOneNumber);
-  } while (
+  } while (isPlayerOneNumberInvalid(playerOneNumber));
+  return playerOneNumber;
+}
+
+function isPlayerOneNumberInvalid(playerOneNumber) {
+  return (
     playerOneNumber < rangeMin ||
     playerOneNumber > rangeMax ||
     isNaN(playerOneNumber)
   );
-  return playerOneNumber;
 }
 
 function tryOnce() {
@@ -51,6 +51,7 @@ function tryOnce() {
   console.log("Essai numéro ", trying);
 
   tryingNumber.push(currentUserNumber);
+
   let guessedNumber = "";
 
   for (let index = 0; index < tryingNumber.length; index++) {
@@ -60,9 +61,14 @@ function tryOnce() {
   }
   console.log("Concatenated guessed number are ", guessedNumber);
 
-  afficheDansHtml("message2", "Nombres essayés: " + guessedNumber);
+  const HTML_ID_MESSAGE2 = "message2";
+  const HTML_ID_MESSAGE1 = "message1";
+  const HTML_ID_RANGEMIN = "rangeMin";
+  const HTML_ID_RANGEMAX = "rangeMax";
 
-  afficheDansHtml("message1", "Essai numéro : " + trying);
+  afficheDansHtml(HTML_ID_MESSAGE2, "Nombres essayés: " + guessedNumber);
+
+  afficheDansHtml(HTML_ID_MESSAGE1, "Essai numéro : " + trying);
 
   if (DidIWin(currentUserNumber, playerOneNumber)) {
     document.write("Bravo ! Vous avez deviné le nombre");
@@ -76,9 +82,9 @@ function tryOnce() {
     console.log("affichage rangeMin" + rangeMin);
     console.log("affichage rangeMax" + rangeMax);
 
-    afficheDansHtml("rangeMin", rangeMin);
+    afficheDansHtml(HTML_ID_RANGEMIN, rangeMin);
 
-    afficheDansHtml("rangeMax", rangeMax);
+    afficheDansHtml(HTML_ID_RANGEMAX, rangeMax);
   }
 }
 /**
