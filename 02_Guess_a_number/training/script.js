@@ -64,5 +64,7 @@ function tryOnce() {
     console.log("affichage rangeMax" + rangeMax);
     let rangeMinHtml = document.getElementById("rangeMin");
     rangeMinHtml.innerText = rangeMin;
+    let rangeMaxHtml = document.getElementById("rangeMax");
+    rangeMaxHtml.innerText = rangeMax;
   }
 }
