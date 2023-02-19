@@ -9,17 +9,15 @@
   </head>
   <body>
     <div class="container">
-      <h3>Entrer un nombre entre 0 et 50</h3>
+      <h3>Entrer un nombre entre 0 et 50:</h3>
       <div>
         0 &lt;
-        <input type="number" placeholder="Num" id="guess" />
+        <input type="number" placeholder="Num" id="numberToGuess" onchange="" />
         &lt; 50
-        <button onclick="gamePlay()" id="my_btn">Jouer</button>
+        <button onclick="tryOnce()" id="my_btn">Jouer</button>
       </div>
 
-      <!-- <input type="text" placeholder="Num" id="guess" /><br />
-      <button onclick="play()" id="my_btn">GUESS</button> -->
-
+      <p id="range"></p>
       <p id="message1">Nombre d'essai : 0</p>
       <p id="message2">Guessed number are : none</p>
       <p id="message3"></p>
