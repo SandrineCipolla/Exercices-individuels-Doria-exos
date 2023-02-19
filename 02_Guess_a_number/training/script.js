@@ -53,7 +53,9 @@ function tryOnce() {
   if (DidIWin(currentUserNumber, playerOneNumber)) {
     document.write("Bravo ! Vous avez deviné le nombre");
   } else {
-    rangeMin = currentUserNumber;
+    if (currentUserNumber > rangeMin) {
+      rangeMin = currentUserNumber;
+    }
     console.log("affichage" + rangeMin);
     let rangeMinHtml = document.getElementById("rangeMin");
     rangeMinHtml.innerText = rangeMin;
