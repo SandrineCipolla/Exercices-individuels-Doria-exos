@@ -1,22 +1,17 @@
 function askNumber() {
   let givenNumber;
-  //   do {
   givenNumber = parseInt(document.getElementById("numberToGuess").value);
   console.log("fonction askNumber", givenNumber);
-  //   } while (isNaN(givenNumber));
 
   return givenNumber;
 }
 function DidIWin(givenNumber, playerOneNumber) {
   console.log(givenNumber, playerOneNumber);
   if (givenNumber > playerOneNumber) {
-    // alert("Plus petit");
     return false;
   } else if (givenNumber < playerOneNumber) {
-    // alert("Plus grand");
     return false;
   } else {
-    // alert("Bravo ! Vous avez deviné le nombre");
     return true;
   }
 }
@@ -44,15 +39,6 @@ let playerOneNumber = guessNumberPlayerOne();
 
 let trying = 0;
 
-// function gamePlay() {
-//   let givenNumber;
-//   playerOneNumber = guessNumberPlayerOne();
-//   console.log("player one number is ", playerOneNumber);
-//   do {
-//     givenNumber = askNumber();
-//   } while (DidIWin(givenNumber, playerOneNumber) == false);
-// }
-
 function tryOnce() {
   let currentUserNumber = askNumber();
   trying++;
@@ -64,7 +50,3 @@ function tryOnce() {
     document.write("Bravo ! Vous avez deviné le nombre");
   }
 }
-
-// =======================================
-
-//gamePlay();
