@@ -58,6 +58,8 @@ function tryOnce() {
   trying++;
 
   console.log("Essai numéro ", trying);
+  let message1 = document.getElementById("message1");
+  message1.innerText = "Essai numéro : " + trying;
   if (DidIWin(currentUserNumber, playerOneNumber)) {
     document.write("Bravo ! Vous avez deviné le nombre");
   }
